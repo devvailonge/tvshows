@@ -1,2 +1,7 @@
+include ':favorite'
+include ':search'
+include ':detail'
+include ':home'
+include ':series-provider'
 include ':app'
 rootProject.name = "Tv shows"
