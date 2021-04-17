@@ -6,13 +6,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chipCategory"
+        android:id="@+id/txtCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
         android:textSize="20dp"
+        style="@style/Widget.MaterialComponents.Chip.Filter"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="asijsi"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

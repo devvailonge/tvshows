@@ -11,6 +11,8 @@ import com.devvailonge.home.R
 class HomeFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+    private var categoryList = getCategories()
+    private val adapter = CategoryAdapter(::categoryClickListener)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,17 +27,23 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-    val adapter = CategoryAdapter(getCategories())
+
         recyclerView.adapter = adapter
+        adapter.updateList(categoryList)
 
     }
 
-
-
-
-
-
-
+    private fun categoryClickListener(category: Category) {
+        val newList = categoryList.map {
+            if (it.category == category.category){
+                it.copy(isSelected = category.isSelected)
+            }else{
+                it
+            }
+        }
+        categoryList = newList
+        adapter.updateList(categoryList)
+    }
 
     private fun getCategories (): List<Category> {
     return arrayListOf(
@@ -52,12 +60,10 @@ class HomeFragment : Fragment() {
         Category("Romance"),
         Category("Children"),
         Category("Documentary"),
-        Category("Family"),
-
-
+        Category("Family")
         ).toList()
     }
 
-    data class Category (val category: String  )
+    data class Category (val category: String, var isSelected: Boolean = false )
 
 }
