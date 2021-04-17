@@ -16,4 +16,14 @@
       app:layout_constraintTop_toTopOf="parent"
       />
 
+  <TextView
+      android:id="@+id/txtSearch"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:hint="Search your favorite series "
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
