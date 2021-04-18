@@ -44,14 +44,6 @@ class CategoryAdapter(private val callback: (Category) -> Unit) :
 
 
                 txtCategory.isChecked = data.isSelected
-               /* if (data.isSelected) {
-                    txtCategory.setBackgroundColor(Color.BLACK)
-                    txtCategory.setTextColor(Color.WHITE)
-                } else {
-                    txtCategory.setBackgroundColor(Color.WHITE)
-                    txtCategory.setTextColor(Color.BLACK)
-                }*/
-
                 txtCategory.setOnClickListener {
 
                     data.isSelected = !data.isSelected
@@ -67,11 +59,3 @@ class CategoryAdapter(private val callback: (Category) -> Unit) :
 
 
 }
-
-
-
-
-
-
-
-
