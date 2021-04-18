@@ -1,12 +1,12 @@
-package com.devvailonge.tvshows.home
+package com.devvailonge.home.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.devvailonge.home.R
-import com.devvailonge.tvshows.home.CategoryAdapter.CategoryViewHolder
-import com.devvailonge.tvshows.home.HomeFragment.Category
+import com.devvailonge.home.presentation.CategoryAdapter.CategoryViewHolder
+import com.devvailonge.home.presentation.HomeFragment.Category
 import com.google.android.material.chip.Chip
 
 class CategoryAdapter(private val callback: (Category) -> Unit) :
