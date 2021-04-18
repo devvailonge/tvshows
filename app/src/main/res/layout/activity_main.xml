@@ -7,8 +7,6 @@
     tools:context=".MainActivity"
     >
 
-    tools:context=".MainActivity">
-
   <com.google.android.material.appbar.AppBarLayout
       android:id="@+id/appBarLayout"
       android:layout_width="match_parent"

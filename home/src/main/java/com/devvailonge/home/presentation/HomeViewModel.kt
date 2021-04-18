@@ -24,26 +24,4 @@ class HomeViewModel @Inject constructor(
             HomeEvents.Fetch -> fetchSeriesUseCase.perform()
         }
     }
-
-/*    //producer
-    private val events = MutableSharedFlow<HomeEvents>()
-
-    //consumer
-    val state: StateFlow<HomeState> = toState()
-
-    private fun toState(): StateFlow<HomeState> {
-        return events
-            .flatMapLatest { process(it) }
-            .stateIn(viewModelScope, SharingStarted.Eagerly, HomeState(syncState = SeriesLoading))
-    }
-
-    private fun process(event: HomeEvents): Flow<HomeState> {
-        return when (event) {
-            HomeEvents.Fetch -> fetchSeriesUseCase.perform()
-        }
-    }
-
-    fun dispatch(event: HomeEvents) {
-        viewModelScope.launch { events.emit(event) }
-    }*/
 }
