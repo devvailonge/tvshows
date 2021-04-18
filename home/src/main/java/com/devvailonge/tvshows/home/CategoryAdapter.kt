@@ -1,10 +1,8 @@
 package com.devvailonge.tvshows.home
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.devvailonge.home.R
 import com.devvailonge.tvshows.home.CategoryAdapter.CategoryViewHolder
@@ -42,15 +40,12 @@ class CategoryAdapter(private val callback: (Category) -> Unit) :
             with(itemView) {
                 val txtCategory = findViewById<Chip>(R.id.txtCategory)
 
-
                 txtCategory.isChecked = data.isSelected
                 txtCategory.setOnClickListener {
 
                     data.isSelected = !data.isSelected
                     callback.invoke(data)
                 }
-
-
                 txtCategory.text = data.category
 
             }
