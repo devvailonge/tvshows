@@ -1,3 +1,4 @@
+include ':database'
 include ':commons'
 include ':favorite'
 include ':search'
