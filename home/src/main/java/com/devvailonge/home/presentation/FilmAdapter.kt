@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.devvailonge.home.R
 import com.devvailonge.home.presentation.FilmAdapter.FilmViewHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -37,13 +38,12 @@ class FilmAdapter (private val films: List<HomeFragment.Film>)
 
             val ivFilm = findViewById<ImageView>(R.id.ivFilm)
             val txtFilm = findViewById<TextView>(R.id.txtFilm)
-            val txtFilm1 = findViewById<TextView>(R.id.txtFilm1)
                 txtFilm.text = data.nome
-                txtFilm1.text = data.nome
+
 
                     ivFilm.load(data.image) {
                         crossfade(true)
-                        //transformations(RoundedCornersTransformation(topLeft = 15f, topRight = 15f))
+                        transformations(RoundedCornersTransformation( 15f))
                     }
             }
         }

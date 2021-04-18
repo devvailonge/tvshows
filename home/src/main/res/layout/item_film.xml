@@ -15,37 +15,21 @@
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:fontFamily="sans-serif-black"
-
-        android:textSize="12sp"
+        android:gravity="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivFilm"
         />
-    
-    <TextView
-        android:layout_width="49dp"
-        android:layout_height="16dp"
-        android:id="@+id/txtFilm1"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFilm"/>
-
 
         <ImageView
-
             android:id="@+id/ivFilm"
             android:layout_width="0dp"
-            android:layout_height="130dp"
+            android:layout_height="250dp"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
