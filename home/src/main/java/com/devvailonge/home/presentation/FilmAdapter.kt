@@ -37,7 +37,9 @@ class FilmAdapter (private val films: List<HomeFragment.Film>)
 
             val ivFilm = findViewById<ImageView>(R.id.ivFilm)
             val txtFilm = findViewById<TextView>(R.id.txtFilm)
+            val txtFilm1 = findViewById<TextView>(R.id.txtFilm1)
                 txtFilm.text = data.nome
+                txtFilm1.text = data.nome
 
                     ivFilm.load(data.image) {
                         crossfade(true)
