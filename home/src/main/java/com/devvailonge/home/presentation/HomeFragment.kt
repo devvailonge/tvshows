@@ -24,7 +24,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
     private var categoryList = getCategories()
     private val adapter = CategoryAdapter(::categoryClickListener)
-    private val adapterFilm = FilmAdapter()
+    private val adapterFilm = FilmAdapter(::filmClickListener)
+
+    private fun filmClickListener(series: Series) {
+
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,6 +102,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     data class Category(val category: String, var isSelected: Boolean = false)
 
 }
+
 
 
 

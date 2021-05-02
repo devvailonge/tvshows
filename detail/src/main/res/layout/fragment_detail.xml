@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/image_filme_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name Film"/>
-
-
+        tools:text="Name Film"
+        android:text="test test test"/>
 
     <ImageView
+        android:contentDescription="@null"
         android:id="@+id/imageFilmDetail"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_film_place_holder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nameFilmDetail"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:textSize="25dp"
-        tools:text="bla bla bla bla"
-        />
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="Test teste teste test test test test teste s" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCastMovie"
@@ -42,13 +41,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="60dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-        />
-
-
-
-
-
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>
