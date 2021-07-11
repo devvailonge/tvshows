@@ -15,32 +15,32 @@ import com.devvailonge.home.domain.Series
 import com.devvailonge.home.presentation.FilmAdapter.FilmViewHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-class FilmAdapter() :
+class FilmAdapter(private val callback: (Series) -> Unit) :
     ListAdapter<Series, FilmViewHolder>(FilmAdapter) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.item_film, parent, false)
-        return FilmAdapter.FilmViewHolder(view)
+        return FilmViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), callback)
     }
 
-
-
-
-    class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class FilmViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         @ExperimentalCoroutinesApi
-        fun bind(data: Series) {
+        fun bind(data: Series, callback: (Series) -> Unit) {
             with(itemView) {
 
                 val ivFilm = findViewById<ImageView>(R.id.ivFilm)
                 val txtFilm = findViewById<TextView>(R.id.txtFilm)
                 txtFilm.text = data.name
 
+                itemView.setOnClickListener {
+                    callback.invoke(data)
+                }
 
                 ivFilm.load(data.image.original) {
                     crossfade(true)
